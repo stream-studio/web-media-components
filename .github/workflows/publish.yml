@@ -20,8 +20,9 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v4
 
-      - name: Setup Node.js ⚙️ - Cache dependencies ⚡ - Install dependencies 🔧
-        uses: ./.github/workflows/setup-node
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
 
       - name: Build main package
         run: npm ci
